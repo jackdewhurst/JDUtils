@@ -1,0 +1,6 @@
+use_frameworks!
+target 'JDUtils_Tests' do
+  pod 'JDUtils', :path => '../'
+  
+  
+end
