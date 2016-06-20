@@ -7,36 +7,28 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'JDUtils'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of JDUtils.'
+	s.name             = 'JDUtils'
+	s.version          = '0.1.0'
+	s.summary          = 'A collection of Objective-C class categories and useful methods for iOS development'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+	s.description      = <<-DESC
+							See https://www.omnifi.co.uk/labs/grow-your-own-cocoapo for more information and instructions.
+						DESC
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+	s.homepage         = 'https://github.com/jackdewhurst/JDUtils'
+	s.license          = { :type => 'MIT', :file => 'LICENSE' }
+	s.author           = { 'Jack Dewhurst' => 'jack@lupd.co' }
+	s.source           = { :git => 'https://github.com/jackdewhurst/JDUtils.git', :tag => s.version.to_s }
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/JDUtils'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Jack Dewhurst' => 'jack@omnifi.co.uk' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/JDUtils.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+	s.ios.deployment_target = '7.0'
 
-  s.ios.deployment_target = '8.0'
+	s.source_files = 'JDUtils/Classes/**/*'
 
-  s.source_files = 'JDUtils/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'JDUtils' => ['JDUtils/Assets/*.png']
-  # }
+	source_files = 'Pod/Classes/**/*'
+	s.resource_bundles = {
+	  'JDAdditions' => ['Pod/Assets/*.png']
+	}
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+	s.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) JD_LOGO_FONT=\'@\"Helvetica-Neue\"\' JD_APP_BOLD_FONT=\'@\"Helvetica-Neue\"\' JD_APP_FONT=\'@\"Helvetica-Neue\"\' JD_APP_LIGHT_FONT=\'@\"Helvetica-Neue\"\' JD_BLACK_COLOR=\'@\"#000000\"\' JD_WHITE_COLOR=\'@\"#FFFFFF\"\' JD_DARK_GREY_COLOR=\'@\"#333333\"\' JD_GREY_COLOR=\'@\"#555555\"\' JD_SEMI_LIGHT_GREY_COLOR=\'@\"#CCCCCC\"\' JD_LIGHT_GREY_COLOR=\'@\"#DDDDDD\"\' JD_REALLY_LIGHT_GREY_COLOR=\'@\"#E5E5E5\"\'" }
+
 end

@@ -1,0 +1,22 @@
+{
+  "name": "JDUtils",
+  "version": "0.1.0",
+  "summary": "A short description of JDUtils.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/JDUtils",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Jack Dewhurst": "jack@omnifi.co.uk"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/JDUtils.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JDUtils/Classes/**/*"
+}
