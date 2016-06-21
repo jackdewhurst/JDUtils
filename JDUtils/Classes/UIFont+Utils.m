@@ -40,7 +40,7 @@
         return [UIFont systemFontOfSize:size];
     }
     
-    return [UIFont fontWithMacro:macro size:size];
+    return [UIFont fontWithName:macro size:size];
 }
 
 

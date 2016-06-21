@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 	s.name             = 'JDUtils'
-	s.version          = '0.1.4'
+	s.version          = '0.1.5'
 	s.summary          = 'A collection of Objective-C class categories and useful methods for iOS development'
 
 	s.description      = <<-DESC
