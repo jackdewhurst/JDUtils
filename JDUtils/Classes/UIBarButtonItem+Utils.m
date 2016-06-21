@@ -1,15 +1,16 @@
 //
-//  UIBarButtonItem+Additions.m
+//  UIBarButtonItem+Utils.m
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
 //
 
-#import "UIBarButtonItem+Additions.h"
-#import "JDAdditions.h"
+#import "UIBarButtonItem+Utils.h"
+#import "JDUtils.h"
 
 
-@implementation UIBarButtonItem (Additions)
+@implementation UIBarButtonItem (Utils)
 
 
 + (UIBarButtonItem*)buttonWithImage:(UIImage*)image target:(id)target selector:(SEL)selector

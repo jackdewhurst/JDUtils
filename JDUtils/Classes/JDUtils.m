@@ -1,15 +1,15 @@
 //
-//  JDAdditions.m
-//  JDAdditions
+//  JDUtils.m
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 11/11/2013.
 //  Copyright (c) 2013 Jack Dewhurst. All rights reserved.
 //
 
-#import "JDAdditions.h"
+#import "JDUtils.h"
 
 
-@interface JDAdditions()
+@interface JDUtils()
 {
     BOOL reachable;
 }
@@ -18,13 +18,13 @@
 @end
 
 
-@implementation JDAdditions
+@implementation JDUtils
 
 
-+ (JDAdditions*)instance
++ (JDUtils*)instance
 {
     static dispatch_once_t pred;
-    static JDAdditions *sharedInstance = nil;
+    static JDUtils *sharedInstance = nil;
     
     dispatch_once(&pred, ^{
         sharedInstance = [[self alloc] init];

@@ -1,5 +1,6 @@
 //
-//  UIColor+Additions.h
+//  UIColor+Utils.h
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
@@ -8,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIColor (Additions)
+@interface UIColor (Utils)
 
 // Shorter version of "colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha"
 + (UIColor *)colorWithR:(float)R G:(float)G B:(float)B A:(float)A;

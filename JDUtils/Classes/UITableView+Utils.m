@@ -1,14 +1,16 @@
 //
-//  UITableView+Additions.m
+//  UITableView+Utils.m
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
 //
 
-#import "UITableView+Additions.h"
+#import "UITableView+Utils.h"
 
 
-@implementation UITableView (Additions)
+@implementation UITableView (Utils)
+
 
 - (void)setHeaderWithHeight:(float)height
 {

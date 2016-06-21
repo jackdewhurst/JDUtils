@@ -1,31 +1,31 @@
 //
-//  UINavigationBar+Additions.m
+//  UINavigationBar+Utils.m
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
 //
 
-#import "UINavigationBar+Additions.h"
+#import "UINavigationBar+Utils.h"
 
-@implementation UINavigationBar (Additions)
+@implementation UINavigationBar (Utils)
 
 
-// ** UNCOMMENT TO SET CUSTOM NAVBAR HEIGHT **
 
-//- (CGSize)sizeThatFits:(CGSize)size
-//{
-//    CGSize newSize = CGSizeMake(self.frame.size.width, NAVBAR_HEIGHT);
-//    
-//    for (UIView *view in self.subviews) {
-//    
-//        if (view.width > self.width - 20)
-//            continue;
-//        
-//        view.centerY = (NAVBAR_HEIGHT / 2) - 1;
-//    }
-//
-//    return newSize;
-//}
+- (CGSize)sizeThatFits:(CGSize)size
+{
+    CGSize newSize = CGSizeMake(self.frame.size.width, JD_NAVBAR_HEIGHT);
+    
+    for (UIView *view in self.subviews) {
+    
+        if (view.width > self.width - 20)
+            continue;
+        
+        view.centerY = (JD_NAVBAR_HEIGHT / 2) - 1;
+    }
+
+    return newSize;
+}
 
 
 

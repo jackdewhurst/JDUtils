@@ -1,18 +1,19 @@
 //
-//  UIImage+Extensions.m
+//  UIImage+Utils.m
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
 //
 
-#import "UIImage+Additions.h"
+#import "UIImage+Utils.h"
 
 
 CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
 CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
 
 
-@implementation UIImage (Additions)
+@implementation UIImage (Utils)
 
 - (UIImage *)imageAtRect:(CGRect)rect
 {

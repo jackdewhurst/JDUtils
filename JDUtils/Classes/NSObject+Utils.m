@@ -1,18 +1,18 @@
 //
-//  NSObject+Additions.m
-//  Wembley
+//  NSObject+Utils.m
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/12/2013.
 //  Copyright (c) 2013 Future Platforms. All rights reserved.
 //
 
-#import "NSObject+Additions.h"
+#import "NSObject+Utils.h"
 #import "JDSafeAlertView.h"
 
 typedef void (^AlertDismissedHandler) (NSInteger selectedIndex, BOOL didCancel);
 
 
-@implementation NSObject (Additions)
+@implementation NSObject (Utils)
 
 - (id)nullWithNew:(id)replacement
 {

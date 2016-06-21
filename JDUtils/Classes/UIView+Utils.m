@@ -1,16 +1,17 @@
 //
-//  UIView+Additions.m
+//  UIView+Utils.m
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
 //
 
 
-#import "UIView+Additions.h"
+#import "UIView+Utils.h"
 #import <objc/runtime.h>
 
 
-@implementation UIView (Additions)
+@implementation UIView (Utils)
 
 
 - (CGFloat)left

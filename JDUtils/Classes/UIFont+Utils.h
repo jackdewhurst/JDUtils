@@ -1,5 +1,5 @@
 //
-//  UIFont+Additions.h
+//  UIFont+Utils.h
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
@@ -8,11 +8,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIFont (Additions)
+@interface UIFont (Utils)
 
 
 // Print a list of available fonts in the log including their accessible names
-+ (void)nsLogInstalledFonts;
++ (void)NSLogInstalledFonts;
 
 
 /* Returns a new font for a given preprocessor macro.

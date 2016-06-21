@@ -1,20 +1,21 @@
 //
-//  JDAdditions.h
+//  JDUtils.h
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
 //
 
-#import "UIView+Additions.h"
-#import "NSObject+Additions.h"
-#import "UIBarButtonItem+Additions.h"
-#import "UIDevice+Additions.h"
-#import "UIFont+Additions.h"
-#import "UIImage+Additions.h"
-#import "UINavigationBar+Additions.h"
-#import "UITableView+Additions.h"
-#import "UIView+Additions.h"
-#import "UIColor+Additions.h"
+#import "UIView+Utils.h"
+#import "NSObject+Utils.h"
+#import "UIBarButtonItem+Utils.h"
+#import "UIDevice+Utils.h"
+#import "UIFont+Utils.h"
+#import "UIImage+Utils.h"
+#import "UINavigationBar+Utils.h"
+#import "UITableView+Utils.h"
+#import "UIView+Utils.h"
+#import "UIColor+Utils.h"
 
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
@@ -38,13 +39,13 @@
 #define radiansToDegrees(radians) ((radians) * (180.0 / M_PI))
 
 
-@interface JDAdditions : NSObject
+@interface JDUtils : NSObject
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) NSDateFormatter *isoFormatter;
 
 
-+ (JDAdditions*)instance;
++ (JDUtils*)instance;
 
 + (BOOL)notificationServicesEnabled;
 + (BOOL)locationServicesEnabled;

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 	s.name             = 'JDUtils'
-	s.version          = '0.1.0'
+	s.version          = '0.1.1'
 	s.summary          = 'A collection of Objective-C class categories and useful methods for iOS development'
 
 	s.description      = <<-DESC
@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
 	  'JDAdditions' => ['Pod/Assets/*.png']
 	}
 
-	s.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) JD_LOGO_FONT=\'@\"Helvetica-Neue\"\' JD_APP_BOLD_FONT=\'@\"Helvetica-Neue\"\' JD_APP_FONT=\'@\"Helvetica-Neue\"\' JD_APP_LIGHT_FONT=\'@\"Helvetica-Neue\"\' JD_BLACK_COLOR=\'@\"#000000\"\' JD_WHITE_COLOR=\'@\"#FFFFFF\"\' JD_DARK_GREY_COLOR=\'@\"#333333\"\' JD_GREY_COLOR=\'@\"#555555\"\' JD_SEMI_LIGHT_GREY_COLOR=\'@\"#CCCCCC\"\' JD_LIGHT_GREY_COLOR=\'@\"#DDDDDD\"\' JD_REALLY_LIGHT_GREY_COLOR=\'@\"#E5E5E5\"\'" }
+	s.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) JD_LOGO_FONT=\'@\"Helvetica-Neue\"\' JD_APP_BOLD_FONT=\'@\"Helvetica-Neue\"\' JD_APP_FONT=\'@\"Helvetica-Neue\"\' JD_APP_LIGHT_FONT=\'@\"Helvetica-Neue\"\' JD_BLACK_COLOR=\'@\"#000000\"\' JD_WHITE_COLOR=\'@\"#FFFFFF\"\' JD_DARK_GREY_COLOR=\'@\"#333333\"\' JD_GREY_COLOR=\'@\"#555555\"\' JD_SEMI_LIGHT_GREY_COLOR=\'@\"#CCCCCC\"\' JD_LIGHT_GREY_COLOR=\'@\"#DDDDDD\"\' JD_REALLY_LIGHT_GREY_COLOR=\'@\"#E5E5E5\"\' JD_NAVBAR_HEIGHT=\'44\'" }
 
 end

@@ -1,17 +1,18 @@
 //
-//  UIFont+Additions.m
+//  UIFont+Utils.m
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
 //
 
-#import "UIFont+Additions.h"
+#import "UIFont+Utils.h"
 
 
-@implementation UIFont (Additions)
+@implementation UIFont (Utils)
 
 
-+ (void)nsLogInstalledFonts
++ (void)NSLogInstalledFonts
 {
     NSArray *familyNames = [[NSArray alloc] initWithArray:[UIFont familyNames]];
     
@@ -25,7 +26,7 @@
                       [familyNames objectAtIndex:indFamily]]];
         for (indFont=0; indFont<[fontNames count]; ++indFont)
         {
-            NSLog(@"        Font name: %@", [fontNames objectAtIndex:indFont]);
+            NSLog(@"    Font name: %@", [fontNames objectAtIndex:indFont]);
         }
     }
 }

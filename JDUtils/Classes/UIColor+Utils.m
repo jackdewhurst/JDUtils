@@ -1,14 +1,15 @@
 //
-//  UIColor+Additions.m
+//  UIColor+Utils.m
+//  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
 //
 
-#import "UIColor+Additions.h"
+#import "UIColor+Utils.h"
 
 
-@implementation UIColor (Additions)
+@implementation UIColor (Utils)
 
 
 + (UIColor *)colorWithR:(float)R G:(float)G B:(float)B A:(float)A
