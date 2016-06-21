@@ -9,8 +9,6 @@
 #import "NSObject+Utils.h"
 #import "JDSafeAlertView.h"
 
-typedef void (^AlertDismissedHandler) (NSInteger selectedIndex, BOOL didCancel);
-
 
 @implementation NSObject (Utils)
 
