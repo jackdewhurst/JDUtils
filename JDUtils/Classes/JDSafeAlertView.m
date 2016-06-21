@@ -1,5 +1,5 @@
 //
-//  UIBarButtonItem+Utils.h
+//  JDSafaAlertView.m
 //  JDUtils
 //
 //  Created by Jack Dewhurst on 10/10/2015.
@@ -11,7 +11,7 @@
 
 @interface JDSafeAlertView() <UIAlertViewDelegate>
 
-@property (strong, nonatomic) UIBAlertView *strongAlertReference;
+@property (strong, nonatomic) JDSafeAlertView *strongAlertReference;
 
 @property (copy) AlertDismissedHandler activeDismissHandler;
 
