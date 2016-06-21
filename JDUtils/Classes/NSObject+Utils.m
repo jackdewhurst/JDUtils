@@ -58,16 +58,34 @@ typedef void (^AlertDismissedHandler) (NSInteger selectedIndex, BOOL didCancel);
 
 
 
-- (void)showAlertViewWithTitle:(NSString*)title text:(NSString*)body cancelTitle:(NSString*)cancelButton otherButtons:(NSArray*)otherButtons returnBlock:(void (^)(NSString *selectedTitle, BOOL didCancel))block
+- (void)showAlertViewWithTitle:(NSString*)title text:(NSString*)body cancelTitle:(NSString*)cancelButton otherButtons:(NSArray*)otherButtons returnBlock:(void (^)(NSInteger selectedIndex, BOOL didCancel))block
 {
-    NSString *string = [@"\n" stringByAppendingString:body];
-    JDSafeAlertView *alert = [[JDSafeAlertView alloc] initWithTitle:title body:string cancelTitle:cancelButton otherTitles:otherButtons];
-    [alert showWithResult:^(NSString *buttonTitle, BOOL didCancel) {
+    NSString *string = body;
+    if (string != nil)
+        string = [@"\n" stringByAppendingString:string];
+    else {
+        string = @"No body found";
+    }
+    JDSafeAlertView *alert = [[JDSafeAlertView alloc] initWithTitle:title message:string cancelButtonTitle:cancelButton otherButtonTitles:otherButtons];
+    [alert showWithDismissHandler:^(UIAlertView *alertView, NSInteger selectedIndex, BOOL didCancel) {
         if (block) {
-            block(buttonTitle, didCancel);
+            block(selectedIndex, didCancel);
         }
     }];
 }
+
+
+
+
+- (void)showTFAlertViewWithTitle:(NSString*)title placeholder:(NSString*)placeholder textFieldText:(NSString*)textFieldText text:(NSString*)body cancelTitle:(NSString*)cancelButton otherButtons:(NSArray*)otherButtons returnBlock:(void (^)(UIAlertView *alertView, NSInteger selectedIndex, BOOL didCancel))block
+{
+    
+    
+    JDSafeAlertView *alert = [[JDSafeAlertView alloc] initWithTitle:title placeholder:placeholder tfText:textFieldText message:body cancelButtonTitle:cancelButton otherButtonTitles:otherButtons];
+    [alert showWithDismissHandler:block];
+}
+
+
 
 
 

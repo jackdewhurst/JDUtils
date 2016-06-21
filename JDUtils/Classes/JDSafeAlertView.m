@@ -1,111 +1,108 @@
 //
-//  JDSafeAlertView.m
+//  UIBarButtonItem+Utils.h
 //  JDUtils
 //
-//  Created by Jack Dewhurst on 10/10/15.
+//  Created by Jack Dewhurst on 10/10/2015.
 //  Copyright (c) 2015 Jack Dewhurst. All rights reserved.
 //
 
-#import "JDSafeAlertView.h"
-#import "JDUtils.h"
 
+#import "JDSafeAlertView.h"
 
 @interface JDSafeAlertView() <UIAlertViewDelegate>
 
-@property (nonatomic, assign) BOOL isIOS7;
-@property (copy) DismissBlock dismissBlock;
-@property (nonatomic, strong) id alertView;
+@property (strong, nonatomic) UIBAlertView *strongAlertReference;
+
+@property (copy) AlertDismissedHandler activeDismissHandler;
+
+@property (strong, nonatomic) NSString *activeTitle;
+@property (strong, nonatomic) NSString *activeMessage;
+@property (strong, nonatomic) NSString *activeCancelTitle;
+@property (strong, nonatomic) NSString *activeOtherTitles;
+@property (strong, nonatomic) UIAlertView *activeAlert;
 
 @end
 
 
 @implementation JDSafeAlertView
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#pragma mark - Public (Initialization)
 
-
-- (id)initWithTitle:(NSString *)title body:(NSString *)body cancelTitle:(NSString *)cancelTitle otherTitles:(NSArray *)otherTitles
-{
+- (id)initWithTitle:(NSString *)aTitle message:(NSString *)aMessage cancelButtonTitle:(NSString *)aCancelTitle otherButtonTitles:(NSArray *)otherTitles {
     self = [super init];
     if (self) {
-
-        self.isIOS7 = SYSTEM_VERSION_LESS_THAN(@"8.0");
-        
-        if (self.isIOS7) {
-            
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:body delegate:self cancelButtonTitle:cancelTitle otherButtonTitles:nil];
-            if (otherTitles != nil) {
-                for (NSString *string in otherTitles) {
-                    [alertView addButtonWithTitle:string];
-                }
-            }
-            self.alertView = alertView;
-            
-        } else {
-            
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:body preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                
-                if (self.dismissBlock) {
-                    self.dismissBlock(action.title, YES);
-                }
-                self.alertView = nil;
-                
-            }];
-            
-            [alertController addAction:cancelAction];
-            
+        self.alertViewStyle = UIAlertViewStyleDefault;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:aTitle message:aMessage delegate:self cancelButtonTitle:aCancelTitle otherButtonTitles:nil];
+        if (otherTitles != nil) {
             for (NSString *string in otherTitles) {
-
-                UIAlertAction *action = [UIAlertAction actionWithTitle:string style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    
-                    if (self.dismissBlock) {
-                        self.dismissBlock(action.title, NO);
-                    }
-                    self.alertView = nil;
-                    
-                }];
-                
-                [alertController addAction:action];
-        
+                [alert addButtonWithTitle:string];
             }
-            self.alertView = alertController;
         }
-        
+        self.activeAlert = alert;
     }
     return self;
 }
 
 
-
-- (void)showWithResult:(DismissBlock)block
-{
-    self.dismissBlock = block;
-    
-    if (self.isIOS7) {
-        [(UIAlertView*)self.alertView show];
-    } else {
-        UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
-        [currentWindow.rootViewController presentViewController:(UIAlertController*)self.alertView animated:YES completion:nil];
+- (id)initWithTitle:(NSString *)aTitle placeholder:(NSString*)placeholder tfText:(NSString*)tfText message:(NSString *)aMessage cancelButtonTitle:(NSString *)aCancelTitle otherButtonTitles:(NSArray *)otherTitles {
+    self = [super init];
+    if (self) {
+        self.alertViewStyle = UIAlertViewStylePlainTextInput;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:aTitle message:aMessage delegate:self cancelButtonTitle:aCancelTitle otherButtonTitles:nil];
+        alert.alertViewStyle = self.alertViewStyle;
+        [[alert textFieldAtIndex:0] setPlaceholder:placeholder];
+        [[alert textFieldAtIndex:0] setText:tfText];
+        [[alert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeEmailAddress];
+        [alert textFieldAtIndex:0].autocapitalizationType = UITextAutocapitalizationTypeSentences;
         
+        
+        if (otherTitles != nil) {
+            for (NSString *string in otherTitles) {
+                [alert addButtonWithTitle:string];
+            }
+        }
+        self.activeAlert = alert;
     }
+    return self;
 }
 
 
+#pragma mark - Public (Functionality)
+
+- (void)showWithDismissHandler:(AlertDismissedHandler)handler {
+    self.activeDismissHandler = handler;
+    self.strongAlertReference = self;
+    [self.activeAlert show];
+    
+    if (self.alertViewStyle == UIAlertViewStyleDefault) return;
+    
+    UITextField *tf = [self.activeAlert textFieldAtIndex:0];
+    
+    if (tf) {
+        [tf becomeFirstResponder];
+    }
+}
+
+#pragma mark UIAlertView passthroughs
+
+- (void)setAlertViewStyle:(UIAlertViewStyle)alertViewStyle
+{
+    _alertViewStyle = alertViewStyle;
+    self.activeAlert.alertViewStyle = alertViewStyle;
+}
+
+- (UITextField *)textFieldAtIndex:(NSInteger)textFieldIndex
+{
+    return [self.activeAlert textFieldAtIndex:textFieldIndex];
+}
 
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-   
-    if (self.dismissBlock == nil) return;
-    
-    self.dismissBlock([alertView buttonTitleAtIndex:buttonIndex], buttonIndex == alertView.cancelButtonIndex);
+    if (self.activeDismissHandler) {
+        self.activeDismissHandler(alertView, buttonIndex, buttonIndex == alertView.cancelButtonIndex);
+    }
+    self.strongAlertReference = nil;
 }
-
-
-#pragma GCC diagnostic pop
-
 
 @end

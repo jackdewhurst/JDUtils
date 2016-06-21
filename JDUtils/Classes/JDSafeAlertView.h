@@ -10,12 +10,17 @@
 #import <UIKit/UIKit.h>
 
 
-typedef void (^DismissBlock) (NSString *buttonTitle, BOOL didCancel);
+typedef void (^AlertDismissedHandler) (UIAlertView *alertView, NSInteger selectedIndex, BOOL didCancel);
 
 @interface JDSafeAlertView : NSObject
 
-- (id)initWithTitle:(NSString *)title body:(NSString *)body cancelTitle:(NSString *)cancelTitle otherTitles:(NSArray *)otherTitles;
+@property (nonatomic, assign) UIAlertViewStyle alertViewStyle NS_AVAILABLE_IOS(5_0);
 
-- (void)showWithResult:(DismissBlock)block;
+- (UITextField *)textFieldAtIndex:(NSInteger)textFieldIndex NS_AVAILABLE_IOS(5_0);
+
+- (id)initWithTitle:(NSString *)aTitle message:(NSString *)aMessage cancelButtonTitle:(NSString *)aCancelTitle otherButtonTitles:(NSArray *)otherTitles;
+- (id)initWithTitle:(NSString *)aTitle placeholder:(NSString*)placeholder tfText:(NSString*)tfText message:(NSString *)aMessage cancelButtonTitle:(NSString *)aCancelTitle otherButtonTitles:(NSArray *)otherTitles;
+
+- (void)showWithDismissHandler:(AlertDismissedHandler)handler;
 
 @end

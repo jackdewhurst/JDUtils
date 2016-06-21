@@ -17,5 +17,8 @@
 
 - (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
 
-- (void)showAlertViewWithTitle:(NSString*)title text:(NSString*)body cancelTitle:(NSString*)cancelButton otherButtons:(NSArray*)otherButtons returnBlock:(void (^)(NSString *selectedTitle, BOOL didCancel))block;
+- (void)showAlertViewWithTitle:(NSString*)title text:(NSString*)body cancelTitle:(NSString*)cancelButton otherButtons:(NSArray*)otherButtons returnBlock:(void (^)(NSInteger selectedIndex, BOOL didCancel))block;
+
+- (void)showTFAlertViewWithTitle:(NSString*)title placeholder:(NSString*)placeholder textFieldText:(NSString*)textFieldText text:(NSString*)body cancelTitle:(NSString*)cancelButton otherButtons:(NSArray*)otherButtons returnBlock:(void (^)(UIAlertView *alertView, NSInteger selectedIndex, BOOL didCancel))block;
+
 @end
