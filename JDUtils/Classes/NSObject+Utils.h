@@ -14,6 +14,8 @@
 
 - (id)nullWithNew:(id)replacement;
 - (id)nullStringWithhNew:(id)replacement;
+- (id)nullMakeString:(id)replacement;
+
 
 - (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
 

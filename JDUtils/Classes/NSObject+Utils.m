@@ -38,6 +38,19 @@
 
 
 
+- (id)nullMakeString:(id)replacement
+{
+    if (self == (id)[NSNull null]) {
+        NSLog(@"IS NULL");
+        return replacement;
+    }
+    
+    return [NSString stringWithFormat:@"%@", self];
+}
+
+
+
+
 - (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay 
 {
     block = [block copy];
