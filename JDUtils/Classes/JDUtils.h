@@ -16,6 +16,7 @@
 #import "UITableView+Utils.h"
 #import "UIView+Utils.h"
 #import "UIColor+Utils.h"
+#import "UILabel+Utils.h"
 
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)

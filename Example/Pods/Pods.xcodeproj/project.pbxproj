@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		02537E4543444151A4F5B3399C0A8D9E /* Pods-JDUtils_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A883D354CE976512DAD4B5E0DD781D9A /* Pods-JDUtils_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54D9106112308F48D92B3EB4B18799A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		767B57231D35421F0055F237 /* UILabel+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 767B57211D35421F0055F237 /* UILabel+Utils.h */; };
+		767B57241D3542200055F237 /* UILabel+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 767B57221D35421F0055F237 /* UILabel+Utils.m */; };
 		76FA41FF1D196C3800111A0D /* JDUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 76FA41E91D196C3800111A0D /* JDUtils.h */; };
 		76FA42001D196C3800111A0D /* JDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FA41EA1D196C3800111A0D /* JDUtils.m */; };
 		76FA42011D196C3800111A0D /* JDSafeAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76FA41EB1D196C3800111A0D /* JDSafeAlertView.h */; };
@@ -56,6 +58,8 @@
 		52A9F5E14C58ED74B5A6EBC40A2071CF /* JDUtils-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDUtils-umbrella.h"; sourceTree = "<group>"; };
 		5EE15E6933674C9CA73D36A5AA83A863 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6542ACFFDAAA8B552AB13268EA3F1372 /* JDUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JDUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		767B57211D35421F0055F237 /* UILabel+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utils.h"; sourceTree = "<group>"; };
+		767B57221D35421F0055F237 /* UILabel+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utils.m"; sourceTree = "<group>"; };
 		76FA41E91D196C3800111A0D /* JDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDUtils.h; sourceTree = "<group>"; };
 		76FA41EA1D196C3800111A0D /* JDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDUtils.m; sourceTree = "<group>"; };
 		76FA41EB1D196C3800111A0D /* JDSafeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDSafeAlertView.h; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				76FA41FC1D196C3800111A0D /* UITableView+Utils.m */,
 				76FA41FD1D196C3800111A0D /* UIView+Utils.h */,
 				76FA41FE1D196C3800111A0D /* UIView+Utils.m */,
+				767B57211D35421F0055F237 /* UILabel+Utils.h */,
+				767B57221D35421F0055F237 /* UILabel+Utils.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 				76FA420D1D196C3800111A0D /* UIImage+Utils.h in Headers */,
 				76FA420B1D196C3800111A0D /* UIFont+Utils.h in Headers */,
 				76FA42131D196C3800111A0D /* UIView+Utils.h in Headers */,
+				767B57231D35421F0055F237 /* UILabel+Utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +363,7 @@
 				8A069E53F26E2C7E37E23864406957D2 /* JDUtils-dummy.m in Sources */,
 				76FA42041D196C3800111A0D /* NSObject+Utils.m in Sources */,
 				76FA42021D196C3800111A0D /* JDSafeAlertView.m in Sources */,
+				767B57241D3542200055F237 /* UILabel+Utils.m in Sources */,
 				76FA42121D196C3800111A0D /* UITableView+Utils.m in Sources */,
 				76FA420E1D196C3800111A0D /* UIImage+Utils.m in Sources */,
 				76FA420C1D196C3800111A0D /* UIFont+Utils.m in Sources */,
