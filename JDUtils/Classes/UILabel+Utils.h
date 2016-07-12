@@ -13,4 +13,10 @@
 
 - (void)setKerning:(CGFloat)kerning;
 
+- (void)fitHeightToText;
+- (void)fitWidthToText;
+
+- (void)fitHeightToTextWithExtra:(float)extra;
+- (void)fitWidthToTextWithExtra:(float)extra;
+
 @end

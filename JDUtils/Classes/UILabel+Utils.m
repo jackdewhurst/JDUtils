@@ -33,7 +33,52 @@
 
 - (void)setKerning:(CGFloat)kerning
 {
-    [self setText:self.text withKerning:kerning];
+    if (self.text != nil)
+        [self setText:self.text withKerning:kerning];
+}
+
+
+
+
+- (void)fitWidthToText
+{
+    CGRect frame = self.frame;
+    frame.size.width = [self sizeThatFits:CGSizeMake(HUGE_VAL, frame.size.height)].width;
+    self.frame = frame;
+}
+
+
+
+
+- (void)fitHeightToText
+{
+    CGRect frame = self.frame;
+    frame.size.height = [self sizeThatFits:CGSizeMake(frame.size.width, HUGE_VAL)].height;
+    self.frame = frame;
+}
+
+
+
+
+- (void)fitWidthToTextWithExtra:(float)extra
+{
+    [self fitWidthToText];
+    
+    CGRect frame = self.frame;
+    frame.size.width += extra;
+    self.frame = frame;
+}
+
+
+
+
+- (void)fitHeightToTextWithExtra:(float)extra
+{
+    [self fitHeightToText];
+    
+    CGRect frame = self.frame;
+    frame.size.height += extra;
+    self.frame = frame;
 }
 
 
