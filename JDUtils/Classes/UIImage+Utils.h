@@ -21,4 +21,7 @@
 
 - (UIImage *)imageNamed:(NSString*)name withColour:(UIColor*)color;
 
+- (UIColor *)averageColor;
+
 @end
+
